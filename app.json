@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/works/works",
+    "pages/mine/mine",
+    "pages/wine/wine",
+    "pages/material/material",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Cocktail鸡尾酒",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#8A8A8A",
+    "selectedColor": "#d50000",
+    "borderStyle": "white",
+    "backgroundColor": "#F9F9F9",
+    "box-shadow": "0 0 6px 0",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/nav/home_nor.png",
+        "selectedIconPath": "images/nav/home_sel.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/wine/wine",
+        "iconPath": "images/nav/wine_nor.png",
+        "selectedIconPath": "images/nav/wine_sel.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/works/works",
+        "iconPath": "images/nav/works_nor.png",
+        "selectedIconPath": "images/nav/works_sel.png",
+        "text": "作品"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "images/nav/mine_nor.png",
+        "selectedIconPath": "images/nav/mine_sel.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

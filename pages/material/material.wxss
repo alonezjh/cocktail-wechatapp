@@ -1,0 +1,53 @@
+/* material.wxss */
+page {
+  height: 100%;
+}
+view , scroll-view{
+  padding: 0px;
+  margin: 0px;
+}
+.weui-navbar{
+   width: 100%;
+   position: fixed;
+   border-bottom: 1px solid #d1d1d1;
+   box-sizing: border-box;
+   white-space: nowrap; 
+   height: 70rpx;
+   z-index: 100;
+   background: white;
+}
+.rec{
+  width: 100%;
+  height: 7%;
+}
+.weui-navbar .default-item{
+  width:30%;
+  display: inline-block;
+  text-align: center;
+  font-size: .8rem;
+  box-sizing: border-box;
+  height: 7%;
+  padding-bottom: 10rpx;
+}
+.weui-navbar .item_on{
+   color: #d50000;
+}
+.weui-navbar-slider{
+    position: fixed;
+    width: 160rpx;
+    height: 2px;
+    content:"";
+    background: #d50000;
+    top: 65rpx;
+    left: 14rpx;
+    transition: transform .3s;
+}
+.swiper-box{
+  height: 900px;
+  border-bottom: 1px solid #d1d1d1;
+}
+.swiper-box .swiper-item{
+   text-align: center;
+   padding-top: 200rpx;
+   height: 100%;
+}

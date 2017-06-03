@@ -1,0 +1,166 @@
+<view class="swiper-tab">  
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">酒单</view>  
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">材料</view>  
+</view>  
+  
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:100vh" bindchange="bindChange">  
+    <swiper-item style="overflow: scroll;background:#f2f2f2">  
+       <block wx:for="{{wineLists}}">
+         <view class="wineList">
+          <image src="{{item.coverUrl}}" mode="aspectFill"/>
+          <view class="name">
+            <text style="font-weight:bold;margin-left:15rpx;">{{item.zhName}}</text>
+            <text style="color:#777;margin-left:10rpx;font-size:.9rem">{{item.enName}}</text>
+          </view>
+          <text class="desc">{{item.descr}}</text>
+          <view class="bottom">
+            <view class="bottom-left">
+              <view style="display:flex;align-items: center;justify-content: center;line-height:40rpx;">
+                <image src="../../images/diff.png" style="width:40rpx;height:40rpx;line-height:40rpx;align-items: center;"></image>
+                <text style="color:#777;margin-left:10rpx;font-size:.9rem;">酒精度数<text style="color:#F35C52;margin-left:10rpx;font-size:.9rem;">{{item.degrees}}°</text></text>
+              </view>
+              <view style="display:flex;margin-left:5vw">
+                <image src="../../images/diff.png" style="width:40rpx;height:40rpx"></image>
+                <text style="color:#777;margin-left:10rpx;font-size:.9rem;">调制技巧<text style="color:#F35C52;margin-left:10rpx;font-size:.9rem">{{item.brewage}}</text></text>
+              </view>
+            </view>
+            <view style="margin-right:3vw;">
+              <image src="../../images/love.png" style="width:50rpx;height:50rpx"></image>
+            </view>
+          </view>
+        </view>
+      </block>  
+    </swiper-item>  
+    <swiper-item style="overflow: scroll;margin-top:80rpx;margin-bottom:80rpx;">  
+      <view style="display:flex;justify-content: center;align-items: center;margin-top:3vw">
+        <view style="width:15vw;height:2rpx;background:#f2f2f2"></view>
+        <text style="margin:0 5vw">基酒类</text>
+        <view style="width:15vw;height:2rpx;background:#f2f2f2"></view>
+      </view>  
+      <view style="display:flex;justify-content: space-between;margin:3vh 0">
+        <view bindtap="redictDetail" data-hi="gin" style="flex:1;display:flex;flex-direction: column;justify-content:center;align-items: center;">
+          <image src="../../images/material/gin.jpg" style="width:100rpx;height:100rpx;margin-bottom:10rpx;"></image>
+          <text style="color:#323232;font-size:.9rem">金酒</text>
+          <text style="color:#999999;font-size:.8rem">Gin</text>
+        </view>
+        <view bindtap="redictDetail" data-hi="tequila" style="flex:1;display:flex;flex-direction: column;justify-content:center;align-items: center;">
+          <image src="../../images/material/tequila.jpg" style="width:100rpx;height:100rpx;margin-bottom:10rpx;"></image>
+          <text style="color:#323232;font-size:.9rem">龙舌兰</text>
+          <text style="color:#999999;font-size:.8rem">Tequila</text>
+        </view>
+        <view bindtap="redictDetail" data-hi="rum" style="flex:1;display:flex;flex-direction: column;justify-content:center;align-items: center;">
+          <image src="../../images/material/rum.jpg" style="width:100rpx;height:100rpx;margin-bottom:10rpx;"></image>
+          <text style="color:#323232;font-size:.9rem">朗姆</text>
+          <text style="color:#999999;font-size:.8rem">Rum</text>
+        </view>
+      </view>
+      <view style="width:90%;margin-left:5%;height:2rpx;background:#f2f2f2"></view>
+      <view style="display:flex;justify-content: space-between;margin:3vh 0">
+        <view bindtap="redictDetail" data-hi="brandy" style="flex:1;display:flex;flex-direction: column;justify-content:flex-start;align-items: center;">
+          <image src="../../images/material/brandy.jpg" style="width:100rpx;height:100rpx;margin-bottom:10rpx;"></image>
+          <text style="color:#323232;font-size:.9rem">白兰地</text>
+          <text style="color:#999999;font-size:.8rem">Brandy</text>
+        </view>
+        <view bindtap="redictDetail" data-hi="whiskey" style="flex-grow:1;flex:1;display:flex;flex-direction: column;justify-content:center;align-items: center;">
+          <image src="../../images/material/whiskey.jpg" style="width:100rpx;height:100rpx;margin-bottom:10rpx;"></image>
+          <text style="color:#323232;font-size:.9rem">威士忌</text>
+          <text style="color:#999999;font-size:.8rem">Whiskey</text>
+        </view>
+        <view bindtap="redictDetail" data-hi="vodka" style="flex-grow:1;flex:1;display:flex;flex-direction: column;justify-content:center;align-items: center;">
+          <image src="../../images/material/vodka.jpg" style="width:100rpx;height:100rpx;margin-bottom:10rpx;"></image>
+          <text style="color:#323232;font-size:.9rem">伏特加</text>
+          <text style="color:#999999;font-size:.8rem">Vodka</text>
+        </view>
+      </view>
+      <view style="height:15rpx;background:#f2f2f2;width:100%"></view>
+      <view style="display:flex;justify-content: center;align-items: center;margin-top:3vw">
+        <view style="width:15vw;height:2rpx;background:#f2f2f2"></view>
+        <text style="margin:0 5vw">辅酒类</text>
+        <view style="width:15vw;height:2rpx;background:#f2f2f2"></view>
+      </view>  
+      <view style="display:flex;justify-content: space-between;margin:3vh 0">
+        <view style="flex:1;display:flex;flex-direction: column;justify-content:center;align-items: center;">
+          <image src="../../images/material/liqueur.jpg" style="width:100rpx;height:100rpx;margin-bottom:10rpx;"></image>
+          <text style="color:#323232;font-size:.9rem">利口酒</text>
+          <text style="color:#999999;font-size:.8rem">Liqueur</text>
+        </view>
+        <view style="flex:1;display:flex;flex-direction: column;justify-content:center;align-items: center;">
+          <image src="../../images/material/aperitif.jpg" style="width:100rpx;height:100rpx;margin-bottom:10rpx;"></image>
+          <text style="color:#323232;font-size:.9rem">开胃酒</text>
+          <text style="color:#999999;font-size:.8rem">Aperitif</text>
+        </view>
+        <view style="flex:1;display:flex;flex-direction: column;justify-content:center;align-items: center;">
+          <image src="../../images/material/cider_juice.jpg" style="width:100rpx;height:100rpx;margin-bottom:10rpx;"></image>
+          <text style="color:#323232;font-size:.9rem">果酒和果汁</text>
+          <text style="color:#999999;font-size:.8rem">Cider & Juice</text>
+        </view>
+      </view>
+      <view style="width:90%;margin-left:5%;height:2rpx;background:#f2f2f2"></view>
+      <view style="display:flex;justify-content: space-between;margin:3vh 0">
+        <view style="flex:1;display:flex;flex-direction: column;justify-content:center;align-items: center;">
+          <image src="../../images/material/soft_drink.jpg" style="width:100rpx;height:100rpx;margin-bottom:10rpx;"></image>
+          <text style="color:#323232;font-size:.9rem">软饮</text>
+          <text style="color:#999999;font-size:.8rem">Soft Drink</text>
+        </view>
+        <view style="flex:1;display:flex;flex-direction: column;justify-content:center;align-items: center;">
+          <image src="../../images/material/wine.jpg" style="width:100rpx;height:100rpx;margin-bottom:10rpx;"></image>
+          <text style="color:#323232;font-size:.9rem">红酒</text>
+          <text style="color:#999999;font-size:.8rem">Wine</text>
+        </view>
+        <view style="flex:1;display:flex;flex-direction: column;justify-content:center;align-items: center;">
+          <image src="../../images/material/beer.jpg" style="width:100rpx;height:100rpx;margin-bottom:10rpx;"></image>
+          <text style="color:#323232;font-size:.9rem">啤酒和其他酒</text>
+          <text style="color:#999999;font-size:.8rem">Beer & Others</text>
+        </view>
+      </view>
+      <view style="height:15rpx;background:#f2f2f2;width:100%"></view>
+      <view style="display:flex;justify-content: center;align-items: center;margin-top:3vw">
+        <view style="width:15vw;height:2rpx;background:#f2f2f2"></view>
+        <text style="margin:0 5vw">配料和饰物</text>
+        <view style="width:15vw;height:2rpx;background:#f2f2f2"></view>
+      </view>  
+      <view style="display:flex;justify-content: space-between;margin:3vh 0">
+        <view style="flex:1;display:flex;flex-direction: column;justify-content:center;align-items: center;">
+          <image src="../../images/material/syrup.jpg" style="width:100rpx;height:100rpx;margin-bottom:10rpx;"></image>
+          <text style="color:#323232;font-size:.9rem">糖和糖浆</text>
+          <text style="color:#999999;font-size:.8rem">Syrup</text>
+        </view>
+        <view style="flex:1;display:flex;flex-direction: column;justify-content:center;align-items: center;">
+          <image src="../../images/material/fruit.jpg" style="width:100rpx;height:100rpx;margin-bottom:10rpx;"></image>
+          <text style="color:#323232;font-size:.9rem">果蔬</text>
+          <text style="color:#999999;font-size:.8rem">Fruit & Vegetables</text>
+        </view>
+      </view>
+      <view style="width:90%;margin-left:5%;height:2rpx;background:#f2f2f2"></view>
+      <view style="display:flex;justify-content: space-between;margin:3vh 0;">
+        <view style="flex:1;display:flex;flex-direction: column;justify-content:center;align-items: center;">
+          <image src="../../images/material/herbs.jpg" style="width:100rpx;height:100rpx;margin-bottom:10rpx;"></image>
+          <text style="color:#323232;font-size:.9rem">香草</text>
+          <text style="color:#999999;font-size:.8rem">Herbs & Spices</text>
+        </view>
+        <view style="flex:1;display:flex;flex-direction: column;justify-content:center;align-items: center;">
+          <image src="../../images/material/other_ingredient.jpg" style="width:100rpx;height:100rpx;margin-bottom:10rpx;"></image>
+          <text style="color:#323232;font-size:.9rem">其他配料</text>
+          <text style="color:#999999;font-size:.8rem">Other Ingredients</text>
+        </view>
+      </view>
+      <view style="height:15rpx;background:#f2f2f2;width:100%"></view>
+      <view style="display:flex;justify-content: center;align-items: center;margin-top:3vw">
+        <view style="width:15vw;height:2rpx;background:#f2f2f2"></view>
+        <text style="margin:0 5vw">器具</text>
+        <view style="width:15vw;height:2rpx;background:#f2f2f2"></view>
+      </view>  
+      <view style="display:flex;justify-content: space-between;margin:3vh 0;padding-bottom:80rpx;">
+        <view style="flex:1;display:flex;flex-direction: column;justify-content:center;align-items: center;">
+          <image src="../../images/material/tools.jpg" style="width:100rpx;height:100rpx;margin-bottom:10rpx;"></image>
+          <text style="color:#323232;font-size:.9rem">工具</text>
+          <text style="color:#999999;font-size:.8rem">Tools</text>
+        </view>
+        <view style="flex:1;display:flex;flex-direction: column;justify-content:center;align-items: center;">
+          <image src="../../images/material/glassware.jpg" style="width:100rpx;height:100rpx;margin-bottom:10rpx;"></image>
+          <text style="color:#323232;font-size:.9rem">酒杯</text>
+          <text style="color:#999999;font-size:.8rem">Glassware</text>
+        </view>
+      </view>
+    </swiper-item>  
+</swiper> 

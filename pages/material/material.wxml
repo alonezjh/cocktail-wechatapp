@@ -1,0 +1,16 @@
+<!--material.wxml-->
+<scroll-view scroll-x="true" class="weui-navbar">
+     <block wx:for-items="{{typeLists}}">
+      <view id="{{index}}" class="{{activeIndex == index ?'item_on':''}} default-item" bindtap="tabClick" style="width:{{tabW}}px;">
+        <text>{{item.zhName}}\n{{item.enName}}</text>
+      </view>
+   </block>
+   <view class="weui-navbar-slider" style="transform:translateX({{slideOffset}}px);"></view>
+</scroll-view>
+<view  class="rec" />
+<swiper current="{{activeIndex}}" class="swiper-box" duration="100" bindchange="bindChange">
+    <swiper-item class="swiper-item" wx:for-items="{{typeLists}}" >
+       <view class="slide-view">{{item.zhName}}\n{{item.enName}}</view>
+       <view class="slide-view">Sorry，暂无相关数据~~~</view>
+    </swiper-item>
+</swiper>

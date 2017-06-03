@@ -1,0 +1,19 @@
+<view class="flex-wrap">
+  <view class="flex-item" wx:for="{{works}}">
+    <image class="cover" src="{{item.picUrl}}" mode="aspectFill"></image>
+    <view class="time">{{item.time}}</view>
+    <view class="other">
+      <text class="text">{{item.text}}</text>
+      <view class="line"></view>
+      <view class="bottom">
+        <view class="author">
+          <image src="{{item.avatarUrl}}"></image>
+          <text>{{item.author}}</text>
+        </view>
+        <view class="like">
+          <image src="../../images/like_no.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,47 @@
+<!--index.wxml-->
+<!--1px = 750/320 = 2.34rpx;-->
+<scroll-view>
+  <view class="container">
+    <view class="swiper-container">
+        <swiper class="swiper_box" autoplay="{{autoplay}}" circular="true" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
+            <block wx:for="{{images}}">
+                <swiper-item>
+                    <image src="{{item}}" class="slide-image"/>
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class="dots">  
+            <block wx:for="{{images}}" wx:key="unique">  
+                <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>  
+            </block>  
+        </view>  
+    </view>
+    <view style="background:#fff;margin-top:20rpx">
+      <view style="width:100%;justify-content:space-between;display: flex;flex-direction: row;align-items: center;padding:15rpx 0 0 15rpx">
+        <text style="border-left:5px #d50000 solid;padding-left:10rpx">最新作品</text>
+        <navigator url="../works/works" open-type="switchTab" hover-class="none" style="color:#d50000;margin-right:40rpx">More></navigator>
+      </view>
+      <scroll-view scroll-x="true" style="width:100%; margin-top:10rpx;white-space: nowrap;">
+        <block wx:for-items="{{works}}">
+          <view style="display: inline-block;">
+            <view class="page-column" style="padding:20rpx;">
+              <image style="width:170rpx;height:170rpx;" src="{{item.picUrl}}" mode="aspectFill"/>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+    <!--<view style="width:100%;height:5vh;justify-content:center;display: flex;flex-direction: row;align-items: center;padding:35rpx 0 10rpx">
+      <image src="../../images/medal_icon.svg" style="width:8%"></image>
+      <text style="color:#d50000;padding-left:10rpx">精品推荐</text>
+    </view>-->
+    <view class="recommend" wx:for="{{recommends}}">
+      <image src="{{item.coverUrl}}"/>
+      <text>{{item.desc}}</text>
+      <view>
+        <image src="../../images/nav/works_sel.svg"></image>
+        <text>{{item.likeCount}}</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>

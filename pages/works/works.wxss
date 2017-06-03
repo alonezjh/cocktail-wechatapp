@@ -1,0 +1,109 @@
+page{
+  background: #f2f2f2;
+}
+.flex-wrap {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+  padding-bottom: 3vw;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.flex-item {
+  width: 47vw;
+  flex-direction: column;
+  background-color: #fff;
+  margin-top: 2vw;
+  height: 45vh;
+  position: relative;
+}
+
+.flex-item:nth-child(odd) {
+  margin-right: 1vw;
+  margin-left: 2vw;
+}
+
+.flex-item:nth-child(even) {
+  margin-left: 1vw;
+  margin-right: 2vw;
+}
+
+.flex-item .cover {
+  width: 47vw;
+  height: 70%;
+}
+
+.flex-item .time {
+  font-size: 0.7rem;
+  background: rgba(10, 10, 10, 0.7);
+  border-radius: 20rpx;
+  padding: 10rpx 25rpx 0rpx;
+  position: absolute;
+  top: 1vh;
+  left: 2vw;
+  color: #fff;
+}
+
+.flex-item .other {
+  height: 30%;
+}
+
+.flex-item .other .text {
+  color: #777;
+  margin-left: 10rpx;
+  font-size: 0.8rem;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-top: 20rpx;
+}
+
+.flex-item .other .line {
+  height: 1rpx;
+  background: #f2f2f2;
+  margin-top: 20rpx;
+}
+
+.bottom {
+  display: flex;
+  height: 45rpx;
+  background-color: #fff;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 20rpx 0rpx 10rpx;
+}
+
+.author {
+  display: flex;
+  flex-direction: row;
+  height: 45rpx;
+  line-height: 40rpx;
+  margin-left: 15rpx;
+}
+
+.author image {
+  width: 45rpx;
+  height: 45rpx;
+  line-height: 40rpx;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.author text {
+  color: #777;
+  margin-left: 10rpx;
+  font-size: 0.8rem;
+}
+
+.like {
+  margin-right: 3vw;
+}
+
+.like image {
+  width: 40rpx;
+  height: 40rpx;
+}

@@ -1,0 +1,33 @@
+<view class="user">
+    <view class="header">
+        <view class="login-wrap" bindtap="goLogin">
+            <view class="user-img">
+                <image src="{{userImg}}" wx:if="{{userImg}}"></image>
+                <image src="../../images/avatar.jpg" wx:else></image>
+            </view>
+            <view class="user-name">{{userName || '去登录>'}}</view>
+        </view>
+    </view>
+    <view class="list section">
+      
+            <view class="flex-con">
+                <image src="../../images/trophy_icon.svg" style="width:30rpx;height:30rpx;"></image>
+                <text>我的作品</text>
+                <image src="../../images/next_icon.svg" style="width:20rpx;height:20rpx;"></image>
+            </view>
+       
+            <view class="flex-con">
+                <image src="../../images/emoji_icon.svg" style="width:30rpx;height:30rpx;"></image>
+                <text>我喜欢的</text>
+                <image src="../../images/next_icon.svg" style="width:20rpx;height:20rpx;"></image>
+            </view>
+      
+
+        <view class="flex-con">
+            <image src="../../images/conversation_icon.svg" style="width:30rpx;height:30rpx;"></image>
+            <text>消息中心</text>
+            <image src="../../images/next_icon.svg" style="width:20rpx;height:20rpx;"></image>
+        </view>
+
+    </view>
+</view>
